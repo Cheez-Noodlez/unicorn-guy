@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flying Unicorn Guy </title>
+    <h1>Flying Unicorn Guy</h1> 
+    <h3>yes its a flying unicorn guy</h3>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <img id="flying-image" src="images-removebg-preview.png" alt="Flying">
+
+  <script>
+    const img = document.getElementById('flying-image');
+
+    function flyToRandomSpot() {
+      // Calculate random X and Y within the window boundaries
+      const randomX = Math.floor(Math.random() * (window.innerWidth - img.width));
+      const randomY = Math.floor(Math.random() * (window.innerHeight - img.height));
+
+      // Apply the new coordinates
+      img.style.left = randomX + 'px';
+      img.style.top = randomY + 'px';
+    }
+
+    // Run the function immediately on load
+    flyToRandomSpot();
+
+    // Repeat every 2 seconds (matches the 2s transition in CSS)
+    setInterval(flyToRandomSpot, 0o500);
+  </script>
+
+</body>
+<footer>
+    <button onclick="navigator.share">Share this Page</button>
+</footer>
+</html>
